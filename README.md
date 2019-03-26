@@ -1,10 +1,8 @@
 # waste-classifier
 
-* Waste AI is a Python prototype for building computer vision models on recyclable, hazardous, and problematic waste imagery sets.
+* Waste AI is a Python algorithm for building computer vision models on recyclable, hazardous, and problematic waste imagery sets. More specifically, we focus on ten types of waste: Roofing, Organics, Concrete, Bricks, Other, Wood, Plastic, Gypsum, Metal
 
 ![alt text](img/WasteAI.png)
-
-One Paragraph of project description goes here
 
 ## Why are we doing this?
 
@@ -31,7 +29,7 @@ End with an example of getting some data out of the system or using it for a lit
 
 * **Jason Chen** - *Initial work* - (https://github.com/lechn)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/LeChn/waste-classifier/contributors) who participated in this project.
 
 ## License
 
