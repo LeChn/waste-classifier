@@ -37,17 +37,10 @@ class Waste_Data_Finetune(Dataset):
         self.classList = list(collections.Counter(self.label_csv.label).keys())
 
     def __getitem__(self, idx):
-        filename, index = self.name_list[idx].split("%")
-        index = int(index)
+        filename = self.name_list[idx]
         filepath = os.path.join(self.train_jpg_dir, filename)
         label = torch.tensor(self.label_csv.loc[self.name_list[idx], self.classList])
         image = Image.open(filepath)
-        numGrids = 12
-        height, width = image.size
-        gheight, gwidth = int(height/numGrids), int(width/numGrids)
-        colIndex = index % numGrids
-        rowIndex = int(index / numGrids)
-        image = image.crop((rowIndex * gheight,  colIndex * gwidth, (rowIndex + 1) * gheight, (colIndex + 1) * gwidth))
         img = self.transform(image)
         return img, label
 
