@@ -12,7 +12,6 @@ import os
 import random
 import time
 import pdb
-import tensorboard_logger as tb_logger
 from util import AverageMeter
 os.environ["CUDA_VISIBLE_DEVICES"] = "0,1,3"
 

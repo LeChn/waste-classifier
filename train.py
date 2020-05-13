@@ -41,7 +41,7 @@ def main():
     sample = next(iter(train_loader))
 
     print("Finished Preprocessing")
-    model = resnet50()
+    model = resnet50(pretrain=True)
     model.fc = nn.Sequential(nn.Linear(2048, 512),
                              nn.ReLU(),
                              nn.Dropout(0.2),
@@ -51,7 +51,7 @@ def main():
     lr = 0.003
     optimizer = torch.optim.SGD(model.parameters(), lr=lr, momentum=0.9, weight_decay=0)
     model = model.cuda()
-    criterion = torch.nn.BCEWithLogitsLoss().cuda()
+    criterion = nn.NLLLoss().cuda()
     # train unsupervised
     print("Start supervised training")
     tb_folder = "./tb"
